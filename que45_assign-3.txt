@@ -1,0 +1,16 @@
+45. Function Overriding
+Redefining a base class function in a derived class.
+
+Requires virtual in base class for polymorphism.
+
+Example:
+cpp
+class Animal {
+public:
+    virtual void sound() { cout << "Animal sound" << endl; }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override { cout << "Bark!" << endl; }  // Overrides base
+};

@@ -1,0 +1,13 @@
+50. Virtual Base Class in C++
+Purpose:
+
+Solves the "diamond problem" in multiple inheritance.
+
+Ensures only one copy of a base class is inherited when multiple paths exist.
+
+Diamond Problem Example:
+cpp
+class A { public: int x; };
+class B : public A {};
+class C : public A {};
+class D : public B, public C {};  // ❌ Two copies of 'A' in 'D'

@@ -1,0 +1,9 @@
+46. Virtual Base Classes
+Used to avoid duplication in multiple inheritance (diamond problem).
+
+Example:
+cpp
+class A { public: int x; };
+class B : virtual public A { ... };
+class C : virtual public A { ... };
+class D : public B, public C { ... };  // Only one 'x'

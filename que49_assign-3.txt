@@ -1,0 +1,22 @@
+49. The override Specifier (C++11 and Later)
+Purpose:
+
+Ensures that a function is actually overriding a base class virtual function.
+
+Provides compile-time safety (error if no matching base function exists).
+
+Example:
+cpp
+class Base {
+public:
+    virtual void foo(int) {}
+};
+
+class Derived : public Base {
+public:
+    void foo(int) override {}  // ✅ Correct override
+    // void foo(float) override {}  // ❌ Error: No matching base function
+};
+Why Use It?
+
+Prevents accidental function hiding or signature mismatches

@@ -1,0 +1,24 @@
+
+50. How Templates Promote Code Reusability
+Single Implementation for All Types
+
+Write one function/class that works with int, double, string, etc.
+
+Example: std::sort works on any container.
+
+Avoids Code Duplication
+
+Without templates, you’d need:
+
+cpp
+void swap(int& a, int& b) { ... }
+void swap(double& a, double& b) { ... }
+// And so on for every type...
+With templates:
+
+cpp
+template <typename T>
+void swap(T& a, T& b) { ... } // Works for all types
+Standard Library Uses Templates Extensively
+
+vector<T>, map<K,V>, sort(), etc.

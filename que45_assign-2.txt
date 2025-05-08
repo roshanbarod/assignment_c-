@@ -1,0 +1,15 @@
+45. Function with default arguments for greeting
+cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+void greet(const string& name = "Guest") {
+    cout << "Hello, " << name << "!" << endl;
+}
+
+int main() {
+    greet();
+    greet("Alice");
+    return 0;
+}

@@ -1,0 +1,21 @@
+48. The virtual Keyword in Function Overriding
+Purpose:
+
+Enables runtime polymorphism (dynamic binding).
+
+Allows the correct derived class function to be called via a base class pointer/reference.
+
+How It Works:
+
+When a function is declared virtual, the compiler creates a vtable (virtual table) for the class.
+
+At runtime, the correct function is resolved based on the actual object type.
+
+Example Without virtual (Static Binding):
+cpp
+Animal *a = new Dog();
+a->sound();  // Calls Animal::sound() (if not virtual)
+Example With virtual (Dynamic Binding):
+cpp
+Animal *a = new Dog();
+a->sound();  // Calls Dog::sound() (if virtual)

@@ -1,0 +1,15 @@
+46. Function with default exponent for power
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double power(double base, int exponent = 2) {
+    return pow(base, exponent);
+}
+
+int main() {
+    cout << "Square of 5: " << power(5) << endl;
+    cout << "5^3: " << power(5, 3) << endl;
+    return 0;
+}

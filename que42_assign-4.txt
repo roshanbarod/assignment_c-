@@ -1,0 +1,16 @@
+42. Templates in C++ and Their Usefulness
+Templates enable generic programming by allowing functions/classes to operate on any data type.
+
+Why Useful?
+
+Code Reusability: Write once, use with any type.
+
+Type Safety: Avoids macros/void pointers.
+
+Performance: Resolved at compile-time (no runtime overhead).
+
+Types:
+
+Function templates (generic functions).
+
+Class templates (generic classes).

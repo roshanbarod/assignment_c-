@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int max(int a, int b, int c) {
+    return max(max(a, b), c);
+}
+
+int main() {
+    cout << "Max of 5, 3: " << max(5, 3) << endl;
+    cout << "Max of 2, 7, 4: " << max(2, 7, 4) << endl;
+    return 0;
+}

@@ -1,0 +1,5 @@
+44. Access Modifiers in Inheritance
+Inheritance Type	Base public	Base protected	Base private
+public	public in derived	protected in derived	Inaccessible
+protected	protected in derived	protected in derived	Inaccessible
+private	private in derived	private in derived	Inaccessible

@@ -1,0 +1,39 @@
+47. How to Override a Base Class Function in a Derived Class
+To override a base class function in a derived class:
+
+The base class function must be declared as virtual (for runtime polymorphism).
+
+The derived class function must have the same signature (name, return type, parameters).
+
+(Optional but recommended) Use the override specifier (C++11 onwards) to ensure correct overriding.
+
+Example:
+cpp
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    virtual void sound() {  // Base class function marked 'virtual'
+        cout << "Animal makes a sound" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {  // Derived class overrides with 'override'
+        cout << "Dog barks" << endl;
+    }
+};
+
+int main() {
+    Animal *a = new Dog();  // Polymorphic behavior
+    a->sound();  // Output: "Dog barks" (calls derived function)
+    delete a;
+    return 0;
+}
+Key Points:
+
+Without virtual, function hiding occurs (base function is called).
+
+override ensures the function is actually overriding a base method (compile-time check).

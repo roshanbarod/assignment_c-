@@ -1,0 +1,11 @@
+49. Advantages of Templates Over Traditional Inheritance
+Feature	Templates	Inheritance
+Type Safety	✅ Compile-time checks	❌ May require runtime checks
+Performance	✅ No runtime overhead (resolved at compile time)	❌ Virtual function overhead
+Code Reusability	✅ Single implementation for all types	❌ Requires separate derived classes
+Flexibility	✅ Works with any type	❌ Limited to class hierarchies
+Compilation Time	❌ Slower (due to multiple instantiations)	✅ Faster
+When to Use Which?
+Use templates when you need generic algorithms (e.g., sort, vector).
+
+Use inheritance when you need runtime polymorphism (e.g., Animal → Dog).

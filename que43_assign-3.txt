@@ -1,0 +1,5 @@
+43. Access Modifiers in C++
+Modifier	Accessibility
+public	Accessible everywhere
+private	Only within the class
+protected	Within class and derived classes

@@ -1,0 +1,16 @@
+44. Function with default arguments for compound interest
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double compoundInterest(double principal, double rate, int years = 1, int compounding = 1) {
+    return principal * pow(1 + (rate/compounding), compounding * years);
+}
+
+int main() {
+    cout << "CI for 1 year: " << compoundInterest(1000, 0.05) << endl;
+    cout << "CI for 3 years: " << compoundInterest(1000, 0.05, 3) << endl;
+    cout << "CI quarterly for 3 years: " << compoundInterest(1000, 0.05, 3, 4) << endl;
+    return 0;
+}

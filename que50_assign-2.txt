@@ -1,0 +1,33 @@
+50. Function pointers and callback functions
+
+#include <iostream>
+using namespace std;
+
+void processArray(int arr[], int size, void (*callback)(int)) {
+    for (int i = 0; i < size; i++) {
+        callback(arr[i]);
+    }
+}
+
+void printNumber(int num) {
+    cout << num << " ";
+}
+
+void printSquare(int num) {
+    cout << num * num << " ";
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    
+    cout << "Original array: ";
+    processArray(arr, size, printNumber);
+    cout << endl;
+    
+    cout << "Squared array: ";
+    processArray(arr, size, printSquare);
+    cout << endl;
+    
+    return 0;
+}

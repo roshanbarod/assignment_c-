@@ -1,0 +1,24 @@
+43. Overloaded functions to print different data types
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void print(int value) {
+    cout << "Integer: " << value << endl;
+}
+
+void print(float value) {
+    cout << "Float: " << value << endl;
+}
+
+void print(const string& value) {
+    cout << "String: " << value << endl;
+}
+
+int main() {
+    print(10);
+    print(3.14f);
+    print("Hello");
+    return 0;
+}
