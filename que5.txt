@@ -1,0 +1,86 @@
+Que-5:-Give a real-world example of a problem that is well-suited to be solved using an OOP approach. Explain why.
+
+Real-World Example: A Library Management System
+Problem:
+Design software to manage a library’s books, members, and borrowing processes.
+
+Why OOP is Ideal for This Problem?
+Natural Modeling of Real-World Entities
+
+Books, members, and transactions are real-world objects with:
+
+Attributes (e.g., Book has title, author, ISBN).
+
+Behaviors (e.g., Member can borrowBook() or returnBook()).
+
+Encapsulation for Data Security
+
+Critical data (e.g., bookAvailability) is hidden inside classes and accessed via methods (e.g., checkOutBook()).
+
+Prevents direct manipulation (e.g., no one can arbitrarily set bookAvailability = true without proper checks).
+
+Reusability via Inheritance
+
+Different types of Book (e.g., EBook, AudioBook) can inherit common properties from a base Book class.
+
+cpp
+class Book { protected: string title; };
+class EBook : public Book { private: string downloadLink; };
+Polymorphism for Flexible Behavior
+
+A calculateFine() method can behave differently for RegularMember vs. PremiumMember.
+
+cpp
+class Member {
+public:
+    virtual double calculateFine(int daysLate) = 0;
+};
+class PremiumMember : public Member {
+public:
+    double calculateFine(int daysLate) override { return daysLate * 0.5; } // Reduced fine
+};
+Modularity for Easy Maintenance
+
+Changes to Book class (e.g., adding genre) won’t break Member or Transaction code.
+
+OOP Implementation Sketch (C++)
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Class 1: Book
+class Book {
+private:
+    string title, author;
+    bool isAvailable;
+public:
+    Book(string t, string a) : title(t), author(a), isAvailable(true) {}
+    void checkOut() { isAvailable = false; }
+    void returnBook() { isAvailable = true; }
+    bool getAvailability() { return isAvailable; }
+};
+
+// Class 2: Member
+class Member {
+private:
+    string name;
+    vector<Book*> borrowedBooks;
+public:
+    Member(string n) : name(n) {}
+    void borrowBook(Book* book) {
+        if (book->getAvailability()) {
+            book->checkOut();
+            borrowedBooks.push_back(book);
+        }
+    }
+};
+
+// Usage
+int main() {
+    Book book1("The Hobbit", "J.R.R. Tolkien");
+    Member member1("Alice");
+
+    member1.borrowBook(&book1); // Clean, object-oriented interaction
+    return 0;
+}

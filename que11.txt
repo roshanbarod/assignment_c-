@@ -1,0 +1,43 @@
+Que-11:List at least three advantages of using OOP in software development.
+
+Advantages of Using OOP in Software Development
+Modularity & Organized Code
+
+Why? Code is structured into reusable classes and objects, mirroring real-world entities (e.g., User, Product).
+
+Example:
+
+cpp
+class User {  
+private:  
+    string name;  
+public:  
+    void setName(string n) { name = n; }  
+};  
+Benefit: Easier to debug, update, and collaborate on large projects.
+
+Code Reusability (Inheritance)
+
+Why? Child classes inherit features from parent classes, eliminating duplicate code.
+
+Example:
+
+cpp
+class Animal { public: void eat() { /*...*/ } };  
+class Dog : public Animal { /* Inherits eat() */ };  
+Benefit: Faster development and consistent logic across related classes.
+
+Data Security (Encapsulation)
+
+Why? Data is private by default and accessed via controlled methods.
+
+Example:
+
+cpp
+class BankAccount {  
+private:  
+    double balance;  
+public:  
+    void deposit(double amount) { /* Validate amount */ }  
+};  
+Benefit: Prevents accidental data corruption and enforces validation rules.

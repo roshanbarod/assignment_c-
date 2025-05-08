@@ -1,0 +1,83 @@
+Que:-What is the fundamental difference between procedural and object-oriented programming paradigms? Provide a brief example to illustrate
+
+
+Fundamental Difference Between Procedural and Object-Oriented Programming (OOP)
+(With C++ Examples)
+
+Core Difference
+The key distinction lies in how code is organized and how data is handled:
+
+Aspect	              Procedural Programming (PP)	          Object-Oriented Programming (OOP)
+Unit of Code	      Functions	                              Objects (bundling data + methods)
+Data Handling	      Data is separate from functions	      Data and methods are encapsulated together
+Approach	          Focuses on "steps to solve a problem"	  Focuses on "objects and their interactions"
+Reusability	          Limited (copy-paste/modify functions)	  High (inheritance, polymorphism)
+Examples in C++
+1. Procedural Programming Example
+cpp
+#include <iostream>
+using namespace std;
+
+// Function to calculate area (separate from data)
+int calculateArea(int length, int width) {
+    return length * width;
+}
+
+int main() {
+    int length = 5, width = 3;  // Data stored in variables
+    int area = calculateArea(length, width);  // Function processes data
+    cout << "Area: " << area << endl;  // Output: 15
+    return 0;
+}
+Key Points:
+
+Data (length, width) exists independently.
+
+Functions (calculateArea) operate on external data.
+
+No protection for data (global variables can be modified anywhere).
+
+2. Object-Oriented Programming Example
+cpp
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    int length, width;  // Data is private (encapsulated)
+
+public:
+    // Constructor initializes data
+    Rectangle(int l, int w) : length(l), width(w) {}
+
+    // Method to calculate area (bundled with data)
+    int calculateArea() {
+        return length * width;
+    }
+};
+
+int main() {
+    Rectangle rect(5, 3);  // Create an object
+    cout << "Area: " << rect.calculateArea() << endl;  // Output: 15
+    return 0;
+}
+Key Points:
+
+Data (length, width) is encapsulated (hidden) inside the Rectangle class.
+
+Methods (calculateArea) are part of the object.
+
+Safer and reusable (e.g., create multiple Rectangle objects).
+
+Why Does This Matter?
+Procedural Programming (PP)
+
+Best for simple, linear tasks (e.g., mathematical calculations).
+
+Example: Scientific computing, scripts.
+
+Object-Oriented Programming (OOP)
+
+Best for complex systems with interacting entities (e.g., games, GUI apps).
+
+Example: A Car class with methods like startEngine() and data like fuelLevel.

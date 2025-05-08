@@ -1,0 +1,109 @@
+Que-20:-20.Explain how to use control structures (e.g., if-else, for, while) to control the flow of execution in a C++ program. Provide a simple code example
+
+Control Structures in C++
+Control structures direct the flow of execution in a program using conditions (if-else), loops (for, while), and jumps (break, continue).
+
+1. Conditional Statements (if-else)
+Used to execute code only if a condition is true.
+
+Syntax
+cpp
+if (condition) {
+    // Code if true
+} 
+else if (condition2) {
+    // Code if condition2 is true
+} 
+else {
+    // Default code
+}
+Example
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 18;
+
+    if (age >= 18) {
+        cout << "You are an adult." << endl;
+    } 
+    else {
+        cout << "You are a minor." << endl;
+    }
+
+    return 0;
+}
+Output:
+
+You are an adult.
+2. Loops (for, while)
+Used to repeat code while a condition is true.
+
+A. for Loop
+Best for known iteration counts (e.g., arrays).
+
+Syntax
+cpp
+for (initialization; condition; update) {
+    // Code to repeat
+}
+Example
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        cout << i << " ";  // Prints 1 2 3 4 5
+    }
+    return 0;
+}
+Output:
+
+1 2 3 4 5
+B. while Loop
+Best for unknown iteration counts (e.g., user input).
+
+Syntax
+cpp
+while (condition) {
+    // Code to repeat
+}
+Example
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int i = 1;
+    while (i <= 5) {
+        cout << i << " ";  // Prints 1 2 3 4 5
+        i++;
+    }
+    return 0;
+}
+Output:
+
+1 2 3 4 5
+3. Jump Statements (break, continue)
+break: Exits the loop immediately.
+
+continue: Skips the current iteration.
+
+Example
+cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    for (int i = 1; i <= 10; i++) {
+        if (i == 3) continue;  // Skip 3
+        if (i == 8) break;     // Exit at 8
+        cout << i << " ";
+    }
+    return 0;
+}
+Output:
+
+1 2 4 5 6 7

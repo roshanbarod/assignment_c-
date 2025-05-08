@@ -1,0 +1,85 @@
+Que-2:Define Object-Oriented Programming (OOP). What are its core characteristics?
+
+Definition of Object-Oriented Programming (OOP)
+OOP is a programming paradigm that organizes software design around "objects"—self-contained units that bundle data (attributes) and behavior (methods) together. It models real-world entities (e.g., a Car, Student, or BankAccount) to create modular, reusable, and maintainable code.
+
+Core Characteristics of OOP
+1. Encapsulation
+Definition: Bundling data (attributes) and methods (functions) into a single unit (class) while restricting direct access to internal data.
+
+Example:
+
+cpp
+class BankAccount {
+private:
+    double balance;  // Hidden data
+public:
+    void deposit(double amount) { balance += amount; }  // Controlled access
+};
+Why? Prevents unauthorized modifications (data security).
+
+2. Inheritance
+Definition: A class (child) can inherit properties and methods from another class (parent).
+
+Example:
+
+cpp
+class Animal { public: void eat() { /*...*/ } };
+class Dog : public Animal { public: void bark() { /*...*/ } };
+Why? Promotes code reuse and hierarchical relationships.
+
+3. Polymorphism
+Definition: The ability of objects to take different forms (e.g., a single method name can behave differently for different classes).
+
+Types:
+
+Compile-time (Overloading):
+
+cpp
+void print(int x) { /*...*/ }
+void print(string s) { /*...*/ }  // Same name, different parameters
+Runtime (Overriding):
+
+cpp
+class Shape { public: virtual void draw() { /*...*/ } };
+class Circle : public Shape { public: void draw() override { /*...*/ } };
+Why? Enables flexible and extensible code.
+
+4. Abstraction
+Definition: Hiding complex implementation details and exposing only essential features.
+
+Example:
+
+cpp
+class Car {
+public:
+    void start() { /* Complex ignition logic */ }  // User only calls start()
+};
+Why? Simplifies interaction with complex systems.
+
+Why Use OOP?
+Modularity: Code is organized into reusable objects.
+
+Maintainability: Easier to debug and update.
+
+Scalability: Ideal for large, complex applications.
+
+Example in C++
+cpp
+#include <iostream>
+using namespace std;
+
+// Class (Abstraction + Encapsulation)
+class Student {
+private:
+    string name;  // Encapsulated data
+public:
+    Student(string n) : name(n) {}
+    void display() { cout << "Student: " << name << endl; }  // Method
+};
+
+int main() {
+    Student s1("Alice");  // Object
+    s1.display();  // Output: Student: Alice
+    return 0;
+}

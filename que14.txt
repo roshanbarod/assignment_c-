@@ -1,0 +1,101 @@
+Que-17:-.Explain the purpose of namespaces in C++. How do they help to avoid naming conflicts?
+
+Purpose of Namespaces in C++
+Namespaces are used to organize code into logical groups and prevent naming conflicts in large projects where multiple libraries or modules might define identifiers (variables, functions, classes) with the same name.
+
+Why Namespaces Are Needed?
+Avoid Naming Collisions
+
+Without namespaces, two libraries could define the same function (e.g., print()), causing ambiguity.
+
+Example:
+
+cpp
+// Library 1
+void print() { cout << "Library 1"; }
+
+// Library 2
+void print() { cout << "Library 2"; }  // ❌ Conflict!
+Solution: Use namespaces to isolate them.
+
+cpp
+namespace Lib1 { void print() { cout << "Lib1"; } }
+namespace Lib2 { void print() { cout << "Lib2"; } }
+Logical Grouping
+
+Namespaces help categorize related code (e.g., Math::sqrt(), Physics::velocity()).
+
+Better Code Organization
+
+Large projects (e.g., game engines) use namespaces to separate modules (e.g., Graphics::, Audio::).
+
+How Namespaces Prevent Conflicts
+Example 1: Basic Namespace Usage
+cpp
+#include <iostream>
+using namespace std;
+
+namespace Physics {
+    float velocity(float d, float t) { return d / t; }
+}
+
+namespace Math {
+    float velocity(float x, float y) { return x + y; }  // No conflict!
+}
+
+int main() {
+    cout << Physics::velocity(100, 2) << endl;  // 50 (distance/time)
+    cout << Math::velocity(5, 3) << endl;       // 8 (x+y)
+    return 0;
+}
+Key Points:
+
+Physics::velocity and Math::velocity coexist without clashes.
+
+The :: operator (scope resolution) specifies which namespace to use.
+
+Example 2: Avoiding std Conflicts
+The C++ Standard Library uses std:: to avoid conflicts with user code:
+
+cpp
+#include <iostream>
+using namespace std;
+
+// Custom 'count' function (would conflict with std::count without namespaces)
+namespace MyLib {
+    int count = 10;
+}
+
+int main() {
+    cout << MyLib::count << endl;  // Uses custom count
+    cout << std::count << endl;    // Uses std::count (if it existed)
+    return 0;
+}
+Common Namespace Techniques
+using Directive
+
+Imports all names from a namespace (use cautiously to avoid new conflicts).
+
+cpp
+using namespace Physics;
+cout << velocity(100, 2) << endl;  // No need for Physics::
+Nested Namespaces
+
+For deeper organization (C++17+ supports namespace A::B).
+
+cpp
+namespace Game {
+    namespace Graphics {
+        void render() { /*...*/ }
+    }
+}
+// Usage:
+Game::Graphics::render();
+Anonymous Namespaces
+
+Replaces static for file-local visibility.
+
+cpp
+namespace {  // Visible only in this file
+    int localVar = 42;
+}

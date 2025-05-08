@@ -1,0 +1,67 @@
+Que:-3.Explain the concept of "abstraction" within the context of OOP. Why is it important?
+
+Abstraction in Object-Oriented Programming (OOP)
+Definition
+Abstraction is the principle of hiding complex implementation details while exposing only the essential features of an object. It focuses on what an object does rather than how it does it.
+
+Key Idea
+Think of abstraction like a car’s dashboard:
+
+You only see the steering wheel, pedals, and speedometer (essential interfaces).
+
+The engine, transmission, and electronics are hidden (implementation details).
+
+How Abstraction Works in Code
+1. Abstract Classes (C++ Example)
+cpp
+// Abstract class (cannot be instantiated)
+class Shape {
+public:
+    virtual void draw() = 0;  // Pure virtual function (no implementation)
+};
+
+class Circle : public Shape {
+public:
+    void draw() override {  // Concrete implementation
+        cout << "Drawing a circle" << endl;
+    }
+};
+
+int main() {
+    Shape* s = new Circle();
+    s->draw();  // Output: "Drawing a circle"
+    delete s;
+    return 0;
+}
+Shape defines what (drawing is possible).
+
+Circle defines how (the actual drawing logic).
+
+2. Interfaces (Java-like Concept)
+cpp
+// Interface-like abstraction in C++
+class IEngine {
+public:
+    virtual void start() = 0;  // Pure virtual function
+};
+
+class CarEngine : public IEngine {
+public:
+    void start() override {
+        cout << "Engine started with fuel injection" << endl;
+    }
+};
+Users only need to know start() works, not how fuel injection operates.
+
+Why is Abstraction Important?
+1. Simplifies Complexity
+Users interact with high-level interfaces (e.g., drive()) without worrying about low-level mechanics (e.g., combustion cycles).
+
+2. Enhances Maintainability
+Changes to internal logic (e.g., switching from fuel to electric engines) don’t affect code using the abstract interface.
+
+3. Promotes Modularity
+Teams can work on different components (e.g., PaymentProcessor vs. DatabaseConnector) without knowing each other’s implementations.
+
+4. Reduces Bugs
+Users can’t accidentally modify internal data (e.g., private variables in C++).

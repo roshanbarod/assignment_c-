@@ -1,0 +1,117 @@
+Que:-4.What are the benefits of using OOP over procedural programming?
+
+Benefits of OOP Over Procedural Programming
+Object-Oriented Programming (OOP) offers significant advantages over Procedural Programming (PP), especially for large-scale, complex software systems. Below are the key benefits with clear examples:
+
+1. Modularity & Organization
+OOP: Code is grouped into objects (classes), making it easier to manage.
+
+PP: Functions and data are separate, leading to disorganized code in large projects.
+
+Example:
+
+cpp
+// OOP: Organized into a 'Car' class  
+class Car {  
+private:  
+    string model;  
+public:  
+    void drive() { /*...*/ }  
+};  
+
+// PP: Data and functions are separate  
+string carModel;  
+void driveCar() { /*...*/ }  
+✅ OOP wins: Better for large applications (e.g., games, enterprise software).
+
+2. Encapsulation (Data Security)
+OOP: Data is private by default, accessed only via methods.
+
+PP: Data is global or passed around, risking unintended changes.
+
+Example:
+
+cpp
+// OOP: Safe data access  
+class BankAccount {  
+private:  
+    double balance;  
+public:  
+    void deposit(double amount) { balance += amount; }  
+};  
+
+// PP: Unsafe global data  
+double balance;  
+void deposit(double amount) { balance += amount; }  // Anyone can modify!  
+✅ OOP wins: Prevents bugs like unauthorized data changes.
+
+3. Reusability (Inheritance & Polymorphism)
+OOP: Classes can inherit properties and override methods.
+
+PP: Reusing code requires copy-pasting/modifying functions.
+
+Example:
+
+cpp
+// OOP: Inheritance  
+class Animal { public: virtual void speak() { /*...*/ } };  
+class Dog : public Animal { public: void speak() override { cout << "Woof!"; } };  
+
+// PP: No inheritance (repetitive code)  
+void dogSpeak() { cout << "Woof!"; }  
+void catSpeak() { cout << "Meow!"; }  
+✅ OOP wins: Saves time, reduces redundancy.
+
+4. Polymorphism (Flexible Behavior)
+OOP: Same method behaves differently based on object type.
+
+PP: Requires separate functions for each case.
+
+Example:
+
+cpp
+// OOP: One interface, multiple implementations  
+Shape* shapes[] = { new Circle(), new Square() };  
+shapes[0]->draw();  // Calls Circle's draw()  
+shapes[1]->draw();  // Calls Square's draw()  
+
+// PP: Manual checks  
+void drawShape(int type) {  
+    if (type == CIRCLE) drawCircle();  
+    else if (type == SQUARE) drawSquare();  
+}  
+✅ OOP wins: Cleaner, more extensible code.
+
+5. Easier Maintenance & Scalability
+OOP: Changes in one class don’t break unrelated code.
+
+PP: Changing a function may affect many parts of the program.
+
+Example:
+
+In OOP, modifying Dog::speak() won’t break Cat or Bird classes.
+
+In PP, changing calculateArea() might require updates everywhere it’s used.
+
+✅ OOP wins: Better for long-term projects.
+
+6. Better for Modeling Real-World Systems
+OOP: Objects naturally represent real entities (e.g., User, Product).
+
+PP: Focuses on steps, not entities.
+
+Example:
+
+cpp
+// OOP: Real-world modeling  
+class User {  
+private:  
+    string name;  
+public:  
+    void login() { /*...*/ }  
+};  
+
+// PP: No natural entity mapping  
+string userName;  
+void loginUser() { /*...*/ }  
+✅ OOP wins: More intuitive for complex domains (e.g., e-commerce, banking)

@@ -1,0 +1,166 @@
+Que-13Discuss the impact of OOP on code maintainability and reusability.
+
+Impact of OOP on Code Maintainability and Reusability
+Object-Oriented Programming (OOP) significantly improves code maintainability and reusability by introducing structured, modular, and intuitive design principles. Below is a detailed breakdown of its impact, supported by C++ examples.
+
+1. Maintainability
+OOP enhances maintainability by:
+
+a) Encapsulation (Data Protection)
+Problem: In procedural code, global data is vulnerable to unintended modifications.
+
+OOP Solution: Data is bundled with methods in classes and hidden (private/protected).
+
+Example (C++):
+
+cpp
+class BankAccount {  
+private:  
+    double balance;  // Hidden data  
+public:  
+    void deposit(double amount) {  
+        if (amount > 0) balance += amount;  // Validation  
+    }  
+    double getBalance() const { return balance; }  // Read-only access  
+};  
+✅ Impact:
+
+Prevents invalid operations (e.g., negative deposits).
+
+Changes to balance logic (e.g., adding fees) are localized.
+
+b) Modularity (Organized Code)
+Problem: Procedural code becomes spaghetti-like as projects grow.
+
+OOP Solution: Classes represent self-contained modules (e.g., User, Product).
+
+Example (C++):
+
+cpp
+class User {  
+private:  
+    string name;  
+public:  
+    void setName(string n) { name = n; }  
+    string getName() const { return name; }  
+};  
+
+class Product {  
+    // Separate module, no interference with User  
+};  
+✅ Impact:
+
+Easier debugging (issues are isolated to classes).
+
+Teams can work on different classes independently.
+
+c) Abstraction (Simplified Interfaces)
+Problem: Complex implementations are hard to manage.
+
+OOP Solution: Expose only what’s necessary (e.g., Car.start() hides engine details).
+
+Example (C++):
+
+cpp
+class Engine {  
+private:  
+    void ignite() { /* Complex logic */ }  
+public:  
+    void start() { ignite(); }  // Simple interface  
+};  
+✅ Impact:
+
+Reduces cognitive load (users ignore internal details).
+
+Internal changes (e.g., switching to electric engines) don’t break user code.
+
+2. Reusability
+OOP promotes reusability through:
+
+a) Inheritance (Avoiding Duplicate Code)
+Problem: Procedural code requires copy-pasting similar logic.
+
+OOP Solution: Child classes inherit and extend parent features.
+
+Example (C++):
+
+cpp
+class Animal {  
+public:  
+    void eat() { cout << "Eating...\n"; }  
+};  
+
+class Dog : public Animal {  
+public:  
+    void bark() { cout << "Woof!\n"; }  
+};  
+
+int main() {  
+    Dog d;  
+    d.eat();  // Reused from Animal  
+    d.bark();  
+}  
+✅ Impact:
+
+No rewriting of eat() for every animal.
+
+Common logic (e.g., database access) can be centralized in a base class.
+
+b) Polymorphism (Flexible Behavior)
+Problem: Procedural code uses long if-else chains for different types.
+
+OOP Solution: Single interface supports multiple forms.
+
+Example (C++ Runtime Polymorphism):
+
+cpp
+class Shape {  
+public:  
+    virtual void draw() = 0;  // Abstract method  
+};  
+
+class Circle : public Shape {  
+public:  
+    void draw() override { cout << "Drawing circle\n"; }  
+};  
+
+class Square : public Shape {  
+public:  
+    void draw() override { cout << "Drawing square\n"; }  
+};  
+
+int main() {  
+    Shape* shapes[] = { new Circle(), new Square() };  
+    for (auto s : shapes) s->draw();  // Calls correct draw()  
+}  
+✅ Impact:
+
+New shapes (e.g., Triangle) can be added without modifying existing code.
+
+Eliminates switch/if-else blocks (cleaner design).
+
+c) Composition (Reusing Classes as Components)
+Problem: Tight coupling in procedural code makes changes risky.
+
+OOP Solution: Assemble classes like Lego blocks.
+
+Example (C++):
+
+cpp
+class Engine {  
+public:  
+    void start() { cout << "Engine started\n"; }  
+};  
+
+class Car {  
+private:  
+    Engine engine;  // Reuse Engine as a component  
+public:  
+    void start() { engine.start(); }  
+};  
+✅ Impact:
+
+Engine can be reused in Truck, Boat, etc.
+
+Swapping components (e.g., ElectricEngine) is easy.
+

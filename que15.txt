@@ -1,0 +1,62 @@
+Que-18:-.What are identifiers in C++? What rules must be followed when creating them?
+
+Identifiers in C++
+Identifiers are names given to variables, functions, classes, and other user-defined elements in C++ code. They serve as labels to uniquely identify these entities.
+
+Rules for Naming Identifiers
+1. Valid Characters
+Can include:
+
+Letters (A-Z, a-z)
+
+Digits (0-9)
+
+Underscores (_)
+
+Must start with a letter or underscore (_).
+
+✅ Valid: count, _temp, var1
+
+❌ Invalid: 1var, @value, #name
+
+2. Case Sensitivity
+C++ is case-sensitive:
+
+age ≠ Age ≠ AGE
+
+3. No Reserved Keywords
+Cannot use C++ keywords (e.g., int, class, return) as identifiers.
+
+✅ Valid: myInt, ClassData
+
+❌ Invalid: int, class
+
+4. No Special Characters
+Spaces, @, #, $, etc., are not allowed.
+
+✅ Valid: total_amount
+
+❌ Invalid: total amount, amount@cash
+
+5. Length Limit
+Most compilers support up to 255 characters, but shorter, meaningful names are preferred.
+
+Examples of Valid vs. Invalid Identifiers
+Valid Identifiers	Invalid Identifiers	        Reason
+age	                1age	                    Starts with a digit
+_count	            float	                    Reserved keyword (float)
+totalAmount	        total-amount	            Hyphen (-) not allowed
+MAX_SPEED	        MAX SPEED	                Space not allowed
+
+Best Practices for Naming Identifiers
+Use descriptive names (e.g., studentAge instead of x).
+
+Follow a consistent convention:
+
+camelCase (variables, functions)
+
+PascalCase (classes, structs)
+
+UPPER_CASE (constants, macros)
+
+Avoid single letters (except in loops, e.g., i, j).

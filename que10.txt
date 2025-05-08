@@ -1,0 +1,63 @@
+Que-10:-.Explain the difference between "overloading" and "overriding"?
+
+Difference Between Overloading and Overriding
+Feature	                 Overloading (Compile-Time Polymorphism)	Overriding (Runtime Polymorphism)
+
+Definition	Multiple functions with the same name but different parameters in the same class.	Child class redefines a method from its parent class with the same signature.
+
+Purpose	Extend functionality for different input types.	      Modify/Replace behavior inherited from a parent class.
+
+Resolution	Decided at compile time.	Decided at runtime (dynamic binding).
+
+Inheritance	Not required (works within a single class).	Requires inheritance (parent-child relationship).
+
+Keyword	No special keyword.	Uses virtual (parent) and override (child) in C++.
+
+Example	print(int x) vs. print(string s)	Parent: virtual void draw()
+
+
+Child: void draw() override
+Examples in C++
+1. Overloading (Same Class)
+cpp
+class Printer {  
+public:  
+    // Overloaded functions  
+    void print(int x) {  
+        cout << "Integer: " << x << endl;  
+    }  
+    void print(string s) {  
+        cout << "String: " << s << endl;  
+    }  
+};  
+
+int main() {  
+    Printer p;  
+    p.print(10);       // Calls print(int)  
+    p.print("Hello");  // Calls print(string)  
+}  
+Key Point:
+
+Same class (Printer), same method name (print), different parameters.
+
+2. Overriding (Parent-Child Classes)
+cpp
+class Shape {  
+public:  
+    virtual void draw() {  // 'virtual' enables overriding  
+        cout << "Drawing a shape." << endl;  
+    }  
+};  
+
+class Circle : public Shape {  
+public:  
+    void draw() override {  // Redefines parent's draw()  
+        cout << "Drawing a circle." << endl;  
+    }  
+};  
+
+int main() {  
+    Shape* shape = new Circle();  
+    shape->draw();  // Calls Circle::draw() (Runtime decision)  
+    delete shape;  
+}  

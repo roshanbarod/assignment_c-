@@ -1,0 +1,117 @@
+Que-6:-Define the four key principles of OOP: Encapsulation, Inheritance, Polymorphism, and Abstraction
+
+The Four Key Principles of Object-Oriented Programming (OOP)
+OOP is built on four foundational principles that make software modular, reusable, and maintainable. Below are clear definitions and examples for each:
+
+1. Encapsulation
+Definition: Bundling data (attributes) and methods (functions) into a single unit (class) while restricting direct access to internal data.
+
+Why?
+
+Protects data from unintended modifications.
+
+Exposes only what’s necessary (controlled access via methods).
+
+Example (C++):
+
+cpp
+class BankAccount {
+private:
+    double balance;  // Hidden data
+public:
+    void deposit(double amount) {  // Controlled access
+        if (amount > 0) balance += amount;
+    }
+    double getBalance() { return balance; }  // Read-only access
+};
+Key Idea:
+
+balance is private (cannot be accessed directly).
+
+Users must use deposit() or getBalance() to interact with it.
+
+2. Inheritance
+Definition: A mechanism where a child class inherits properties and behaviors from a parent class.
+
+Why?
+
+Promotes code reuse.
+
+Establishes hierarchical relationships (e.g., Animal → Dog).
+
+Example (C++):
+
+cpp
+class Animal {  // Parent class
+public:
+    void eat() { cout << "Eating..." << endl; }
+};
+
+class Dog : public Animal {  // Child class
+public:
+    void bark() { cout << "Woof!" << endl; }
+};
+
+int main() {
+    Dog myDog;
+    myDog.eat();  // Inherited from Animal
+    myDog.bark(); // Unique to Dog
+}
+Key Idea:
+
+Dog inherits eat() from Animal and adds its own bark().
+
+3. Polymorphism
+Definition: The ability of objects to take many forms, allowing a single interface to work with different data types.
+
+Types:
+
+Compile-time (Method Overloading):
+
+cpp
+void print(int x) { /*...*/ }
+void print(string s) { /*...*/ }  // Same name, different parameters
+Runtime (Method Overriding):
+
+cpp
+class Shape {
+public:
+    virtual void draw() { cout << "Drawing shape" << endl; }
+};
+class Circle : public Shape {
+public:
+    void draw() override { cout << "Drawing circle" << endl; }  // Overridden
+};
+Why?
+
+Enables flexible, extensible code (e.g., a Shape reference can point to Circle or Square).
+
+4. Abstraction
+Definition: Hiding complex implementation details and exposing only essential features.
+
+Why?
+
+Reduces complexity.
+
+Users interact with high-level interfaces (e.g., Car.start() without knowing engine mechanics).
+
+Example (C++):
+
+cpp
+class Car {
+private:
+    void igniteEngine() { /* Complex logic */ }  // Hidden
+public:
+    void start() {  // Simple interface
+        igniteEngine();
+        cout << "Car started!" << endl;
+    }
+};
+
+int main() {
+    Car myCar;
+    myCar.start();  // User doesn't need to know about igniteEngine()
+}
+Key Idea:
+
+igniteEngine() is hidden; users only see start().

@@ -1,0 +1,40 @@
+Que.7:-Explain how encapsulation helps to protect data and create modular code. Give an example using a class and its members.
+
+Encapsulation: Data Protection & Modular Code
+Definition: Encapsulation bundles data (attributes) and methods (functions) into a class, restricting direct access to internal data.
+
+How It Helps
+Data Protection:
+
+Private members cannot be modified directly from outside the class.
+
+Controlled access via public methods (e.g., setBalance() with validation).
+
+Modularity:
+
+Classes are self-contained units (e.g., BankAccount doesn’t interfere with UserProfile).
+
+Example (C++):
+
+cpp
+class BankAccount {
+private:
+    double balance;  // Hidden data
+public:
+    void deposit(double amount) {
+        if (amount > 0) balance += amount;  // Validation
+    }
+    double getBalance() { return balance; }  // Read-only access
+};
+
+int main() {
+    BankAccount account;
+    account.deposit(100);  // Safe modification
+    // account.balance = -100;  // Error: 'balance' is private
+    cout << account.getBalance();  // Output: 100
+}
+Key Points:
+
+balance is private (protected from direct tampering).
+
+deposit() ensures only valid amounts are added.

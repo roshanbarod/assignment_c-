@@ -1,0 +1,66 @@
+Oue-19:-What are the differences between variables and constants in C++? How are they declared?
+
+Differences Between Variables and Constants in C++
+Feature	                               Variables	                   Constants
+Definition	   Values that can change during runtime.	Values that cannot change after initialization.
+Purpose	       Store temporary/modifiable data.	        Store fixed values (e.g., PI = 3.14).
+Declaration	   Use int, float, etc.	                    Use const or constexpr (C++11+).
+Example	       int age = 25;	                        const double PI = 3.14159;
+Mutability	   Can be reassigned.	                    Cannot be reassigned (compile-time error).
+
+How to Declare Variables and Constants
+1. Variables
+Syntax:
+
+cpp
+datatype variableName = initialValue;  // Initialization (optional)
+Example:
+
+cpp
+int score = 100;       // Integer variable
+float temperature;     // Uninitialized (holds garbage value)
+score = 95;            // Reassignment allowed
+2. Constants
+Syntax (using const):
+
+cpp
+const datatype CONSTANT_NAME = value;
+Example:
+
+cpp
+const double PI = 3.14159;           // Runtime constant
+constexpr int MAX_SIZE = 100;        // Compile-time constant (C++11+)
+// PI = 3.14;  // ❌ Error: Cannot modify a constant
+Key Differences in Depth
+1. Mutability
+Variables: Can be updated.
+
+cpp
+int count = 10;
+count = 20;  // ✅ Valid
+Constants: Immutable after declaration.
+
+cpp
+const int MAX = 100;
+// MAX = 200;  // ❌ Compile-time error
+2. Use Cases
+Variables:
+
+Loop counters (for (int i = 0; ...)).
+
+User input storage (cin >> age;).
+
+Constants:
+
+Fixed values (PI, MAX_CONNECTIONS).
+
+Array sizes (const int SIZE = 10; int arr[SIZE];).
+
+3. Memory Allocation
+Variables: Stored in RAM (can change).
+
+Constants:
+
+constexpr may be optimized into the code (no memory usage).
+
+const may still occupy memory (if address is taken).

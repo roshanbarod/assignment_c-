@@ -1,0 +1,48 @@
+Que-8:-What is inheritance? How does it promote code reuse and maintainability? Provide a simple example using classes
+
+Inheritance in Object-Oriented Programming (OOP)
+Definition:
+Inheritance is a mechanism where a child class (subclass) inherits properties (attributes) and behaviors (methods) from a parent class (superclass). It establishes an "is-a" relationship (e.g., a Dog is an Animal).
+
+How Inheritance Promotes Code Reuse and Maintainability
+Code Reuse:
+
+Child classes automatically get all non-private members of the parent class.
+
+No need to rewrite common functionality (e.g., all animals eat(), but only dogs bark()).
+
+Maintainability:
+
+Changes to the parent class (e.g., adding a sleep() method) automatically apply to all child classes.
+
+Reduces duplicate code, making updates easier and less error-prone.
+
+Simple Example (C++)
+Parent Class (Superclass):
+cpp
+class Animal {
+public:
+    void eat() {
+        cout << "This animal eats food." << endl;
+    }
+};
+Child Class (Subclass):
+cpp
+class Dog : public Animal {  // Inherits from Animal
+public:
+    void bark() {
+        cout << "Woof! Woof!" << endl;
+    }
+};
+Usage:
+cpp
+int main() {
+    Dog myDog;
+    myDog.eat();  // Inherited from Animal (reused code)
+    myDog.bark(); // Unique to Dog
+    return 0;
+}
+Output:
+
+This animal eats food.
+Woof! Woof!
