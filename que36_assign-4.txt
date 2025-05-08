@@ -1,0 +1,14 @@
+36. try, catch, and throw Blocks
+Block	Purpose
+try	Wraps code that might throw exceptions.
+catch	Handles exceptions of a specific type.
+throw	Generates an exception (built-in or custom).
+Example:
+cpp
+try {
+    int x = 10, y = 0;
+    if (y == 0) throw runtime_error("Division by zero!");
+    cout << x / y;
+} catch (const runtime_error& e) {
+    cout << "Caught: " << e.what();
+}

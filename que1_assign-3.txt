@@ -1,0 +1,7 @@
+1. What is an object in C++?
+An object is an instance of a class that contains data (attributes) and functions (methods) that operate on that data. Objects are the fundamental building blocks of object-oriented programming in C++.
+
+Example:
+
+cpp
+Car myCar;  // myCar is an object of class Car

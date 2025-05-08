@@ -1,0 +1,24 @@
+17. Types of Constructors in C++
+Default Constructor
+
+Takes no arguments.
+
+Used when an object is created without parameters.
+
+Parameterized Constructor
+
+Takes arguments to initialize objects with specific values.
+
+Copy Constructor
+
+Creates an object as a copy of another object.
+
+Syntax: ClassName(const ClassName &obj)
+
+Move Constructor (C++11)
+
+Transfers resources from a temporary object (used in move semantics).
+
+Delegating Constructor (C++11)
+
+Calls another constructor within the same class

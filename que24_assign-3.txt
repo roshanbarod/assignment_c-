@@ -1,0 +1,17 @@
+24. How a Destructor is Declared and Defined
+Declaration (inside class):
+cpp
+~ClassName();
+Definition (outside class):
+cpp
+ClassName::~ClassName() {
+    // Cleanup code
+}
+Example:
+cpp
+class FileHandler {
+    FILE *file;
+public:
+    FileHandler() { file = fopen("data.txt", "r"); }
+    ~FileHandler() { if (file) fclose(file); }  // Ensures file is closed
+};

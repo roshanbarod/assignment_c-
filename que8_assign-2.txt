@@ -1,0 +1,26 @@
+8. How do you call a simple function that takes no parameters and returns void?
+If a function is defined like this:
+
+
+void greet() {
+    std::cout << "Hello, World!" << std::endl;
+}
+Then you can call it from main or another function like this:
+
+
+greet();
+Complete example:
+
+
+#include <iostream>
+
+void greet();  // prototype
+
+int main() {
+    greet();  // function call
+    return 0;
+}
+
+void greet() {
+    std::cout << "Hello, World!" << std::endl;
+}

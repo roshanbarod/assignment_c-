@@ -1,0 +1,49 @@
+12. Provide an Example of a Function that Uses Call by Reference to Swap Two Integers
+
+Call by reference in C++ allows functions to modify the actual variables passed to them. One common use of this technique is in creating a function to swap the values of two integers. When arguments are passed by reference, the function operates on the actual memory addresses of the passed variables, ensuring that changes inside the function are reflected outside it as well.
+
+Below is a detailed example of a swap function using call by reference:
+
+#include <iostream>
+
+// Function to swap two integers using call by reference
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 10, y = 20;
+
+    std::cout << "Before swap: x = " << x << ", y = " << y << std::endl;
+    swap(x, y);
+    std::cout << "After swap: x = " << x << ", y = " << y << std::endl;
+
+    return 0;
+}
+
+Explanation:
+
+The swap function takes two references to integers a and b.
+
+It uses a temporary variable temp to store the value of a.
+
+Then a is assigned the value of b, and b gets the original value of a stored in temp.
+
+Because a and b are references to the original variables x and y, the changes made inside the function are reflected in main().
+
+Output:
+
+Before swap: x = 10, y = 20
+After swap: x = 20, y = 10
+
+Advantages of Using Call by Reference for Swapping:
+
+Efficient: No copying of variables.
+
+Practical: Directly alters the caller’s data.
+
+Reusable: Can be applied to any two integers without requiring global or static variables.
+
+This simple swap operation demonstrates the usefulness of call by reference in scenarios requiring modification of multiple variables within a function

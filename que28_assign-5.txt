@@ -1,0 +1,5 @@
+28. Write a Function Prototype for a Function That Calculates the Factorial of a Number
+cpp
+Copy
+Edit
+int factorial(int n);

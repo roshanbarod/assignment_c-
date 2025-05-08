@@ -1,0 +1,23 @@
+33. What is a Friend Function in C++?
+A friend function is a non-member function that has access to private and protected members of a class.
+
+Declared inside the class with the friend keyword.
+
+Declaration:
+cpp
+class ClassName {
+    friend ReturnType FunctionName(Arguments);
+};
+Example:
+cpp
+class Box {
+private:
+    int width;
+public:
+    Box(int w) : width(w) {}
+    friend void printWidth(Box b);  // Friend function
+};
+
+void printWidth(Box b) {
+    cout << "Width: " << b.width << endl;  // Accesses private member
+}

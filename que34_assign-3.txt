@@ -1,0 +1,6 @@
+34. Friend Functions vs. Member Functions
+Feature	Friend Function	Member Function
+Access	Can access private/protected members	Can access all members
+Invocation	Called like a normal function (func(obj))	Called on an object (obj.func())
+this Pointer	No this pointer	Has this pointer
+Use Case	Useful for operator overloading (<<, >>)	Default choice for class operations

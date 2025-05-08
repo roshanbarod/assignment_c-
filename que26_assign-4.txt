@@ -1,0 +1,28 @@
+
+26. Polymorphism Example (Base/Derived Classes)
+cpp
+class Shape {
+public:
+    virtual double area() const = 0;
+};
+
+class Circle : public Shape {
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    double area() const override { return 3.14 * radius * radius; }
+};
+
+class Square : public Shape {
+    double side;
+public:
+    Square(double s) : side(s) {}
+    double area() const override { return side * side; }
+};
+
+int main() {
+    Shape* shapes[] = {new Circle(5), new Square(4)};
+    for (Shape* s : shapes) {
+        cout << s->area() << endl;  // Dynamic dispatch
+    }
+}

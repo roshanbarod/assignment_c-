@@ -1,0 +1,28 @@
+32. Friend Functions in Operator Overloading
+Friend functions allow external functions to access private members of a class.
+
+Useful when operator overloading requires access to private data but should not be a member function (e.g., <<, >>).
+
+Example (Overloading << for Complex class):
+cpp
+class Complex {
+private:
+    float real, imag;
+public:
+    Complex(float r = 0, float i = 0) : real(r), imag(i) {}
+
+    // Declare friend function
+    friend ostream& operator<<(ostream& out, const Complex &obj);
+};
+
+// Define friend function
+ostream& operator<<(ostream& out, const Complex &obj) {
+    out << obj.real << " + " << obj.imag << "i";
+    return out;
+}
+
+int main() {
+    Complex c(4.5, 5.5);
+    cout << c;  // Output: 4.5 + 5.5i
+    return 0;
+}

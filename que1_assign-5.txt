@@ -1,0 +1,29 @@
+1. What is the Purpose of the main() Function in a C++ Program?
+In C++, the main() function is the starting point of program execution. When a C++ program is run, control is handed to the operating system, which then calls the main() function. Without this function, the program would have no defined starting point, and the compiler would raise an error.
+
+The core purposes of the main() function include:
+
+a. Entry Point of Execution
+The main() function acts as the entry point from which the execution of instructions begins. Every C++ program must have one main() function (and only one).
+
+cpp
+Copy
+Edit
+int main() {
+    // Program execution starts here
+    return 0;
+}
+b. Interface with the Operating System
+When a program terminates, it returns control back to the operating system. The main() function’s return value typically indicates the status of the program:
+
+return 0; signifies successful execution.
+
+Non-zero return values indicate different types of errors.
+
+c. Invocation of Other Functions
+In many real-world programs, main() serves as the orchestrator, calling other functions that carry out specific tasks. This design makes the program modular and manageable.
+
+d. User Interaction and Program Initialization
+The main() function often includes code to take user input, initialize variables or resources, or handle program arguments passed from the command line.
+
+In summary, the main() function is indispensable in C++ as it defines where and how the execution of a program begins and ends.

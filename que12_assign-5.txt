@@ -1,0 +1,33 @@
+12. Provide an Example of a Function That Uses Call by Reference to Swap Two Integers
+A classic use of call by reference is swapping two numbers without using a return value.
+
+a. Function Definition
+cpp
+Copy
+Edit
+#include <iostream>
+using namespace std;
+
+void swap(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+b. Usage in main()
+cpp
+Copy
+Edit
+int main() {
+    int x = 5, y = 10;
+    cout << "Before swap: x = " << x << ", y = " << y << endl;
+    swap(x, y);
+    cout << "After swap: x = " << x << ", y = " << y << endl;
+    return 0;
+}
+c. Output
+yaml
+Copy
+Edit
+Before swap: x = 5, y = 10
+After swap: x = 10, y = 5
+Because the function parameters are references, changes made inside the function affect the original variables.

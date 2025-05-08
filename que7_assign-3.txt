@@ -1,0 +1,6 @@
+7. What are public members in a class and how are they accessed?
+Public members are class members that can be accessed from anywhere in the program where the object is visible.
+
+Access method:
+
+Directly using the dot operator (.) on class objects

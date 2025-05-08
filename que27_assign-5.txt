@@ -1,0 +1,32 @@
+27. Create a Program That Takes Two Integers as Command Line Arguments and Prints Their Sum
+cpp
+Copy
+Edit
+#include <iostream>
+#include <cstdlib> // for atoi
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc != 3) {
+        cout << "Usage: " << argv[0] << " num1 num2" << endl;
+        return 1;
+    }
+
+    int a = atoi(argv[1]);
+    int b = atoi(argv[2]);
+
+    cout << "Sum: " << a + b << endl;
+    return 0;
+}
+Run from command line:
+
+bash
+Copy
+Edit
+./program 5 7
+Output:
+
+makefile
+Copy
+Edit
+Sum: 12

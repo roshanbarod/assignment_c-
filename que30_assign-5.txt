@@ -1,0 +1,17 @@
+que24_assign-5.txt30. Write a Simple Function That Calculates the Area of a Circle
+cpp
+Copy
+Edit
+#include <iostream>
+using namespace std;
+
+double areaOfCircle(double radius) {
+    const double PI = 3.14159;
+    return PI * radius * radius;
+}
+
+int main() {
+    double r = 5.0;
+    cout << "Area: " << areaOfCircle(r) << endl;
+    return 0;
+}

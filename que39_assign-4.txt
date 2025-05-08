@@ -1,0 +1,35 @@
+39. How the throw Keyword Works in Exception Handling
+The throw keyword raises an exception, which can be:
+
+A built-in type (int, const char*).
+
+A standard exception (std::runtime_error).
+
+A custom exception class.
+
+Example:
+cpp
+double divide(double a, double b) {
+    if (b == 0) {
+        throw "Division by zero!"; // Throws a C-string
+    }
+    return a / b;
+}
+
+int main() {
+    try {
+        cout << divide(10, 0);
+    } catch (const char* msg) {
+        cerr << "Error: " << msg << endl;
+    }
+    return 0;
+}
+Output:
+
+Error: Division by zero!
+Key Points:
+
+throw transfers control to the nearest matching catch block.
+
+If no matching catch is found, the program terminates (std::terminate is called).
+

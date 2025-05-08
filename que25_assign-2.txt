@@ -1,0 +1,14 @@
+25. Provide an example of a function with default arguments:
+#include <iostream>
+using namespace std;
+
+void display(string name = "User", int age = 18) {
+    cout << "Name: " << name << ", Age: " << age << endl;
+}
+
+int main() {
+    display();                // Name: User, Age: 18
+    display("Alice");         // Name: Alice, Age: 18
+    display("Bob", 25);       // Name: Bob, Age: 25
+    return 0;
+}

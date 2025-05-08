@@ -1,0 +1,23 @@
+25. Provide an Example of a Function With Default Arguments
+cpp
+Copy
+Edit
+#include <iostream>
+using namespace std;
+
+void displayMessage(string message = "Hello, User!") {
+    cout << message << endl;
+}
+
+int main() {
+    displayMessage();                   // Uses default argument
+    displayMessage("Welcome Back!");    // Uses provided argument
+    return 0;
+}
+Output:
+
+sql
+Copy
+Edit
+Hello, User!
+Welcome Back!

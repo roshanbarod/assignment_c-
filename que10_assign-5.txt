@@ -1,0 +1,36 @@
+10. What is Call by Reference in C++?
+Call by reference allows a function to modify the actual variables passed to it. Instead of passing copies of the variables (as in call by value), the function receives references to the original variables.
+
+a. Syntax
+You use reference variables in the function parameters:
+
+cpp
+Copy
+Edit
+void updateValue(int &x) {
+    x = x + 5;
+}
+b. Key Characteristics
+The & symbol indicates that the parameter is a reference.
+
+Any change made to the parameter inside the function reflects in the original argument.
+
+c. Example
+cpp
+Copy
+Edit
+void increment(int &num) {
+    num += 1;
+}
+
+int main() {
+    int a = 10;
+    increment(a);
+    cout << a;  // Output: 11
+    return 0;
+}
+Call by reference is particularly useful when:
+
+You need to modify actual arguments.
+
+You want to avoid copying large objects (improves performance).

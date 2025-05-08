@@ -1,0 +1,6 @@
+23. How do you specify default arguments in a function declaration?
+
+Default arguments are specified by assigning values in the function declaration:
+void greet(string name = "Guest") {
+    cout << "Hello, " << name << "!" << endl;
+}

@@ -1,0 +1,18 @@
+29. Implement a C++ Program With a Function Prototype for a Function That Returns the Maximum of Three Numbers
+cpp
+Copy
+Edit
+#include <iostream>
+using namespace std;
+
+int maxOfThree(int a, int b, int c); // Function prototype
+
+int main() {
+    int x = 10, y = 25, z = 15;
+    cout << "Maximum: " << maxOfThree(x, y, z) << endl;
+    return 0;
+}
+
+int maxOfThree(int a, int b, int c) {
+    return (a > b && a > c) ? a : (b > c ? b : c);
+}

@@ -1,0 +1,24 @@
+4. What is function prototyping and why is it necessary in C++?
+Function prototyping means declaring the function’s interface (return type, name, and parameter types) before using it or defining it. This helps the compiler understand how to correctly call the function even if its body (definition) appears later.
+
+Why it’s necessary:
+
+Ensures correct type checking at compile-time.
+
+Prevents errors due to mismatched parameters or return types.
+
+Helps organize code, especially when function definitions are placed after main.
+
+Example:
+
+
+int add(int, int);  // prototype
+
+int main() {
+    std::cout << add(5, 3);  // valid
+    return 0;
+}
+
+int add(int a, int b) {
+    return a + b;
+}

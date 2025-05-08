@@ -1,0 +1,3 @@
+22. What are default arguments in C++?
+
+Default arguments are values provided in function declarations that are used when the corresponding arguments are not specified in function calls. This feature simplifies function calls and enhances code flexibility

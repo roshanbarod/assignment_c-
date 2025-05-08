@@ -1,0 +1,35 @@
+31. Example of Overloading the + Operator for a Custom Class
+cpp
+#include <iostream>
+using namespace std;
+
+class Complex {
+private:
+    float real, imag;
+public:
+    Complex(float r = 0, float i = 0) : real(r), imag(i) {}
+
+    // Overloading the '+' operator as a member function
+    Complex operator+(const Complex &obj) {
+        Complex temp;
+        temp.real = real + obj.real;
+        temp.imag = imag + obj.imag;
+        return temp;
+    }
+
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1(3.5, 2.5), c2(1.5, 4.5);
+    Complex c3 = c1 + c2;  // Calls operator+
+    c3.display();  // Output: 5 + 7i
+    return 0;
+}
+Explanation:
+
+The + operator is overloaded to add two Complex numbers.
+
+The function returns a new Complex object with the sum.

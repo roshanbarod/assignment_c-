@@ -1,0 +1,27 @@
+7. What Is the Difference Between a Declaration and a Definition of a Function?
+Understanding the difference between declaration and definition is crucial in C++.
+
+a. Declaration
+A declaration tells the compiler about a function’s name, return type, and parameters but does not specify what the function does.
+
+cpp
+Copy
+Edit
+int multiply(int, int); // This is a declaration (or prototype)
+b. Definition
+A definition includes the actual body of the function — it tells the compiler what the function does.
+
+cpp
+Copy
+Edit
+int multiply(int a, int b) {
+    return a * b;
+}
+c. Key Differences
+Aspect	Declaration	Definition
+Purpose	Introduces function	Implements function
+Body present?	No	Yes
+Multiple allowed?	Yes	No (only one per function)
+
+A function must be defined once but can be declared multiple times, often in multiple files via header files.
+

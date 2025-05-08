@@ -1,0 +1,14 @@
+22. Constructor Initializer List
+A more efficient way to initialize data members (avoids default initialization + assignment).
+
+Syntax:
+cpp
+ClassName::ClassName() : member1(value1), member2(value2) { ... }
+Example:
+cpp
+class Student {
+    string name;
+    int rollNo;
+public:
+    Student(string n, int r) : name(n), rollNo(r) {}
+};

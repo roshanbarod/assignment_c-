@@ -1,0 +1,37 @@
+40. Purpose of the finally Block in Exception Handling
+C++ does not have a finally block (unlike Java/Python). Instead, RAII (Resource Acquisition Is Initialization) is used to ensure cleanup.
+
+Alternatives in C++:
+Destructors: Automatically called when objects go out of scope.
+
+Smart pointers (std::unique_ptr, std::shared_ptr) for dynamic memory.
+
+Example (RAII Alternative to finally):
+
+cpp
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class FileHandler {
+    FILE* file;
+public:
+    FileHandler(const char* filename) : file(fopen(filename, "r")) {
+        if (!file) throw runtime_error("File not found!");
+    }
+    ~FileHandler() { 
+        if (file) fclose(file); // Auto cleanup
+    }
+    void read() { /* Read file */ }
+};
+
+int main() {
+    try {
+        FileHandler f("data.txt");
+        f.read();
+    } catch (const exception& e) {
+        cerr << "Error: " << e.what() << endl;
+    }
+    // File is closed automatically when 'f' goes out of scope
+    return 0;
+}

@@ -1,0 +1,22 @@
+18. Default Constructor and When It is Used
+A default constructor has no parameters (or all parameters have default values).
+
+It is called when:
+
+An object is declared without arguments (ClassName obj;).
+
+An array of objects is created.
+
+A derived class constructor does not explicitly call a base class constructor.
+
+Example:
+cpp
+class Student {
+    string name;
+    int age;
+public:
+    Student() {  // Default constructor
+        name = "Unknown";
+        age = 0;
+    }
+};

@@ -1,0 +1,18 @@
+31. Role of Abstract Methods in Abstract Classes
+Enforce Implementation: Derived classes must override pure virtual methods.
+
+Define Interfaces: Specify what a derived class should do (not how).
+
+Prevent Instantiation: Ensure only concrete subclasses can be used.
+
+Example:
+cpp
+class Database {  // Abstract
+public:
+    virtual void connect() = 0;  // Must be implemented by derived classes
+};
+
+class MySQL : public Database {
+public:
+    void connect() override { cout << "MySQL connected"; }  // Required
+};

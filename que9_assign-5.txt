@@ -1,0 +1,49 @@
+9. Explain the Concept of "Scope" in the Context of Functions
+Scope refers to the region or part of a program where a particular variable or function is accessible. Understanding scope is critical in managing data access and avoiding conflicts in names.
+
+a. Types of Scope in Functions
+i. Local Scope
+Variables declared inside a function are said to have local scope. They are only accessible within the function and cease to exist once the function terminates.
+
+cpp
+Copy
+Edit
+void example() {
+    int localVar = 10;  // localVar is local to example()
+}
+ii. Global Scope
+Variables declared outside all functions are global and accessible throughout the file after their declaration.
+
+cpp
+Copy
+Edit
+int globalVar = 100;
+
+void show() {
+    cout << globalVar;  // Accessible
+}
+iii. Block Scope
+Variables declared within a block ({}) are limited to that block, even inside a function.
+
+cpp
+Copy
+Edit
+void testScope() {
+    if (true) {
+        int blockVar = 50;
+        cout << blockVar;
+    }
+    // cout << blockVar;  // Error: blockVar is out of scope here
+}
+b. Scope Resolution Operator ::
+To access a global variable when there is a local variable with the same name, C++ uses the scope resolution operator:
+
+cpp
+Copy
+Edit
+int value = 10;
+
+void demo() {
+    int value = 5;
+    cout << ::value;  // Accesses the global value
+}

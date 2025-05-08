@@ -1,0 +1,8 @@
+2. What is a class in C++ and how does it differ from an object?
+A class is a user-defined blueprint or template that describes the properties (data members) and behaviors (member functions) that objects of that class will have. An object is a concrete instance created from a class.
+
+Difference:
+
+Class is a template (like a blueprint for a house)
+
+Object is an instance (like an actual house built from the blueprint)

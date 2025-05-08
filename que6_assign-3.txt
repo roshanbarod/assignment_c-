@@ -1,0 +1,6 @@
+6. What are private members in a class and how are they accessed?
+Private members are class members that can only be accessed by member functions of the same class. They cannot be accessed directly from outside the class.
+
+Access method:
+
+Only through public member functions (getters/setters)

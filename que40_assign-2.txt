@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <time.h>
+
+#define MAX_MACRO(a, b) ((a) > (b) ? (a) : (b))
+
+inline int max_inline(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    clock_t start, end;
+    double macro_time, inline_time;
+    int result;
+    int iterations = 100000000;
+    int num1 = 5, num2 = 10;
+    
+    // Test macro
+    start = clock();
+    for (int i = 0; i < iterations; i++) {
+        result = MAX_MACRO(num1, num2);
+    }
+    end = clock();
+    macro_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+    
+    // Test inline function
+    start = clock();
+    for (int i = 0; i < iterations; i++) {
+        result = max_inline(num1, num2);
+    }
+    end = clock();
+    inline_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+    
+    printf("Macro time: %f seconds\n", macro_time);
+    printf("Inline function time: %f seconds\n", inline_time);
+    
+    return 0;
+}

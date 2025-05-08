@@ -1,0 +1,28 @@
+8. How Do You Call a Simple Function That Takes No Parameters and Returns void?
+To call a function that takes no arguments and returns nothing (i.e., has a return type void), you simply write the function name followed by parentheses.
+
+a. Declaration and Definition
+cpp
+Copy
+Edit
+void greet(); // Prototype
+
+void greet() {
+    std::cout << "Hello, World!" << std::endl;
+}
+b. Calling the Function
+cpp
+Copy
+Edit
+int main() {
+    greet(); // Function call
+    return 0;
+}
+Since the function returns void, you cannot assign its result to a variable:
+
+cpp
+Copy
+Edit
+// Incorrect:
+int result = greet(); // Error: 'void' value not assignable
+Functions with void return type are often used for performing actions such as displaying output or logging events where no return value is needed.

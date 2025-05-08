@@ -1,0 +1,8 @@
+33. Benefits of Abstract Classes
+Interface Enforcement: Guarantees derived classes implement key methods.
+
+Polymorphism: Enables runtime method resolution.
+
+Code Reusability: Common logic can be in the abstract class.
+
+Design Clarity: Clearly separates what vs. how.

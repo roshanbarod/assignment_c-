@@ -1,0 +1,10 @@
+8. Explain the significance of access specifiers in a class.
+Access specifiers determine the accessibility of class members:
+
+private: Accessible only within the class (default for class)
+
+protected: Accessible within the class and derived classes
+
+public: Accessible from anywhere
+
+They enforce encapsulation and data hiding.

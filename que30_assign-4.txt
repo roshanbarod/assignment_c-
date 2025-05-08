@@ -1,0 +1,6 @@
+30. Abstract Classes vs. Regular Classes
+Feature	                        Abstract Class	         Regular Class
+Instantiation	    ❌ Cannot create objects	           ✅ Can create objects
+Pure Virtual	    Must have at least one = 0 func 	No pure virtual functions needed
+Purpose	            Define interfaces	                         Define concrete objects
+Inheritance	        Forces derived classes to implement	              Can be used directly

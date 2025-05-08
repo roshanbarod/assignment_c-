@@ -1,0 +1,12 @@
+11. How does call by reference differ from call by value?
+Feature	Call by Value	Call by Reference
+What is passed	A copy of the variable	A reference (alias) to the variable
+Modifies original?	❌ No	✅ Yes
+Memory usage	More (due to copying)	Less
+Safety	Safe (original data is unchanged)	Riskier (original data can change)
+
+Example:
+
+
+void byValue(int a) { a = 10; }
+void byRef(int &a) { a = 10; }

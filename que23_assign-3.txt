@@ -1,0 +1,17 @@
+23. Destructor in C++ and Its Purpose
+A destructor is a special member function that cleans up resources when an object is destroyed.
+
+It has the same name as the class with a tilde (~) prefix.
+
+Called automatically when:
+
+An object goes out of scope.
+
+delete is called on a dynamically allocated object.
+
+Purpose:
+Release dynamic memory (delete).
+
+Close files, network connections, etc.
+
+Prevent memory leaks.

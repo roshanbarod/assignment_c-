@@ -1,0 +1,21 @@
+3. What are the two valid signatures of the main function in C++?
+C++ allows two standard (valid) forms of main:
+
+
+int main()
+Used when no command-line arguments are needed.
+
+
+int main(int argc, char* argv[])
+Used when the program needs to process command-line arguments.
+
+argc (argument count): number of arguments passed (including the program name).
+
+argv (argument vector): an array of C-style strings representing the arguments.
+
+Example:
+
+int main(int argc, char* argv[]) {
+    std::cout << "Program name: " << argv[0] << std::endl;
+    return 0;
+}

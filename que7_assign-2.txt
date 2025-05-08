@@ -1,0 +1,9 @@
+7. What is the difference between a declaration and a definition of a function?
+Aspect	                    Declaration	                                                    Definition
+Purpose	     Tells the compiler about a function’s existence	Provides actual implementation (body)
+Ends with	                       Semicolon (;)	             Function body in {} braces
+Example	int add(int, int);	                                int add(int a, int b) { return a + b; }
+Required?	Yes, if the function is called before its definition	Always required eventually
+
+A function can be declared multiple times, but it should be defined only once.
+

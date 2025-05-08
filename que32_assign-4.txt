@@ -1,0 +1,28 @@
+32. Defining and Using an Abstract Class
+Step 1: Define an Abstract Class
+cpp
+class Animal {
+public:
+    virtual void speak() const = 0;  // Pure virtual
+    virtual ~Animal() {}             // Virtual destructor (best practice)
+};
+Step 2: Derive and Implement
+cpp
+class Dog : public Animal {
+public:
+    void speak() const override { cout << "Bark!"; }  // Must implement
+};
+
+class Cat : public Animal {
+public:
+    void speak() const override { cout << "Meow!"; }  // Must implement
+};
+Step 3: Use Polymorphically
+cpp
+int main() {
+    Animal* animals[] = {new Dog(), new Cat()};
+    for (Animal* a : animals) {
+        a->speak();  // Dynamic binding
+    }
+    // Output: Bark! Meow!
+}

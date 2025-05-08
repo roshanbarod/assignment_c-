@@ -1,0 +1,40 @@
+4. What Is Function Prototyping and Why Is It Necessary in C++?
+a. Definition
+A function prototype is a declaration of a function that specifies the function’s name, return type, and parameters, but does not include the function body.
+
+cpp
+Copy
+Edit
+int add(int, int); // Function prototype
+b. Purpose of Function Prototyping
+Function prototyping is critical for the following reasons:
+
+Type Checking: Ensures that calls to functions use the correct number and type of parameters.
+
+Forward Declaration: Allows functions to be defined after main() or other functions that call them.
+
+Compiler Validation: Allows the compiler to validate function calls even before seeing the function definition.
+
+c. Necessity
+In C++, you cannot use a function before the compiler knows about it. Without a prototype or prior definition, the compiler will throw an error when encountering a call to an undeclared function.
+
+Example:
+cpp
+Copy
+Edit
+#include <iostream>
+
+// Function prototype
+int add(int, int);
+
+int main() {
+    std::cout << add(5, 3) << std::endl;
+    return 0;
+}
+
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
+Here, the prototype allows the compiler to recognize add() in main() even though its definition comes later.
+

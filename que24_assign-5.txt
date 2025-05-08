@@ -1,0 +1,28 @@
+24. What Are the Rules for Using Default Arguments in Functions?
+Default arguments allow you to specify default values for one or more parameters in a function, making them optional when the function is called.
+
+Rules for Default Arguments:
+Defaults must be provided from right to left:
+
+Once a default value is provided for a parameter, all parameters to its right must also have default values.
+
+cpp
+Copy
+Edit
+void example(int a, int b = 2, int c = 3); // valid
+void invalid(int a = 1, int b, int c);     // invalid
+Defaults are defined only once:
+
+Typically provided in the function declaration (prototype), not in the definition if both are present.
+
+cpp
+Copy
+Edit
+// Correct
+void greet(string name = "Guest");
+void greet(string name) {
+    cout << "Hello, " << name << endl;
+}
+Ambiguity must be avoided:
+
+Overloaded functions and default arguments can lead to ambiguous calls.

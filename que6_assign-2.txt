@@ -1,0 +1,21 @@
+6. What happens if a function is used before it is prototyped?
+If a function is called before the compiler sees a prototype or definition, one of the following will occur:
+
+The compiler may assume a default return type and parameter types (in older C++ versions), which is unsafe.
+
+In modern C++ (C++11 onward), a compile-time error will occur.
+
+You may encounter undefined behavior if the assumed signature is wrong.
+
+Example (causes error):
+
+
+int main() {
+    int result = add(5, 3);  // Error: 'add' not declared
+    return 0;
+}
+
+int add(int a, int b) {
+    return a + b;
+}
+To fix: declare a prototype for add before main

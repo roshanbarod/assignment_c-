@@ -1,0 +1,19 @@
+16. What is a Constructor in C++ and Why is it Important?
+A constructor is a special member function that:
+
+Has the same name as the class.
+
+Is automatically called when an object is created.
+
+Initializes object data members.
+
+Does not have a return type (not even void).
+
+Why Constructors are Important?
+Automatic Initialization: Ensures objects start in a valid state.
+
+Prevents Uninitialized Data: Avoids undefined behavior.
+
+Supports Overloading: Can define multiple ways to initialize objects.
+
+Resource Allocation: Used for dynamic memory allocation (e.g., opening files, network connections).

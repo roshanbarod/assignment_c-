@@ -1,0 +1,22 @@
+20. Copy Constructor and Its Purpose
+A copy constructor creates a new object as a copy of an existing object.
+
+Purpose:
+Used when:
+
+An object is passed by value to a function.
+
+An object is returned by value from a function.
+
+An object is explicitly copied (Point p2 = p1;).
+
+Example:
+cpp
+class Point {
+    int x, y;
+public:
+    Point(const Point &p) {  // Copy constructor
+        x = p.x;
+        y = p.y;
+    }
+};

@@ -1,0 +1,22 @@
+6. What Happens if a Function Is Used Before It Is Prototyped?
+If a function is called before the compiler has seen a prototype or full definition of the function, a compilation error or unexpected behavior may occur.
+
+a. Compiler Error
+In strict C++ mode, calling a function without a prior prototype leads to a compiler error, especially if the function returns a type or accepts parameters.
+
+cpp
+Copy
+Edit
+int main() {
+    greet(); // Error: 'greet' was not declared in this scope
+    return 0;
+}
+
+void greet() {
+    std::cout << "Hello!" << std::endl;
+}
+b. Incorrect Assumptions (in older C standards)
+In older C (not C++) compilers, if a function was not declared before use, the compiler would assume it returns int, which could cause undefined behavior. This is not allowed in modern C++.
+
+c. Best Practice
+Always declare function prototypes at the beginning of the file or in a header file to ensure correctness.

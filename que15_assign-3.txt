@@ -1,0 +1,29 @@
+15. Example of a Class with Static Data and Function Members
+cpp
+#include <iostream>
+using namespace std;
+
+class Counter {
+    static int count;  // Static data member (shared among all objects)
+
+public:
+    Counter() {
+        count++;  // Increment count when an object is created
+    }
+
+    static int getCount() {  // Static member function
+        return count;
+    }
+};
+
+// Initialize static member outside the class
+int Counter::count = 0;
+
+int main() {
+    Counter c1, c2, c3;
+    cout << "Total objects created: " << Counter::getCount() << endl;  // Output: 3
+    return 0;
+}
+count is shared across all Counter objects.
+
+getCount() is called without an object (Counter::getCount()).

@@ -1,0 +1,16 @@
+37. Role of the catch Block
+Catches exceptions thrown in the try block.
+
+Can handle specific exception types (e.g., runtime_error, out_of_range).
+
+A catch(...) block catches all exceptions (use sparingly).
+
+Example:
+cpp
+try {
+    // Code that may fail
+} catch (const invalid_argument& e) {
+    // Handle invalid args
+} catch (const exception& e) {
+    // Handle other exceptions
+}

@@ -1,0 +1,31 @@
+17. Explain the advantages and disadvantages of using macros over inline functions:
+
+Advantages of Macros:
+
+Simpler and faster to write for very short and repetitive code.
+
+Useful for conditional compilation using #ifdef, #endif.
+
+Disadvantages of Macros:
+
+No type safety: Parameters aren't type-checked.
+
+No scoping rules: Can lead to naming conflicts.
+
+Difficult to debug: Errors in macros are harder to trace.
+
+Unintended side effects: Due to multiple evaluations.
+
+Advantages of Inline Functions:
+
+Type-safe: Arguments are checked for type correctness.
+
+Easier to debug.
+
+Obey scope rules.
+
+Disadvantages of Inline Functions:
+
+Code bloat: Excessive inlining increases binary size.
+
+Not guaranteed: Compiler may choose not to inline

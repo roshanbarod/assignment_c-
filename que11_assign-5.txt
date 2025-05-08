@@ -1,0 +1,32 @@
+11. How Does Call by Reference Differ from Call by Value?
+The main difference lies in whether the function receives a copy of the variable or a reference to the original variable.
+
+Feature	Call by Value	Call by Reference
+What is passed?	A copy of the variable	A reference (alias) to the variable
+Changes reflect back?	No	Yes
+Use case	When you don’t want to alter data	When you need to alter original data
+Syntax	void func(int x)	void func(int &x)
+
+Example Comparison
+Call by Value:
+
+cpp
+Copy
+Edit
+void setValue(int x) {
+    x = 20;
+}
+int a = 10;
+setValue(a);
+// a is still 10
+Call by Reference:
+
+cpp
+Copy
+Edit
+void setValue(int &x) {
+    x = 20;
+}
+int a = 10;
+setValue(a);
+// a is now 20

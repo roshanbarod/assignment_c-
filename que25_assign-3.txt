@@ -1,0 +1,17 @@
+25. What Happens if a Destructor is Not Defined?
+If no destructor is defined, the compiler provides a default destructor.
+
+The default destructor:
+
+Calls destructors for member objects (if any).
+
+Does not free dynamically allocated memory (leads to leaks if not handled).
+
+Example of Memory Leak:
+cpp
+class BadExample {
+    int *arr;
+public:
+    BadExample() { arr = new int[100]; }  // Memory allocated
+    // No destructor → Memory leak!
+};

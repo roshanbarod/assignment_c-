@@ -1,0 +1,14 @@
+21. Constructor Overloading
+Defining multiple constructors with different parameter lists.
+
+Allows objects to be initialized in different ways.
+
+Example:
+cpp
+class Rectangle {
+    int width, height;
+public:
+    Rectangle() { width = 0; height = 0; }  // Default
+    Rectangle(int w, int h) { width = w; height = h; }  // Parameterized
+    Rectangle(int s) { width = height = s; }  // Square
+};

@@ -1,0 +1,29 @@
+5. How Do You Declare a Function Prototype for a Function That Returns an Integer and Takes Two Integer Parameters?
+To declare a function prototype for a function that returns an int and takes two int parameters, you use the following syntax:
+
+cpp
+Copy
+Edit
+int functionName(int, int);
+Example:
+cpp
+Copy
+Edit
+int sum(int, int); // Function prototype
+
+int main() {
+    int result = sum(10, 20);
+    std::cout << "Sum: " << result << std::endl;
+    return 0;
+}
+
+int sum(int a, int b) {
+    return a + b;
+}
+You can also include parameter names for clarity:
+
+cpp
+Copy
+Edit
+int sum(int a, int b);
+This doesn’t affect the compiler but can improve code readability.

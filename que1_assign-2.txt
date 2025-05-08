@@ -1,0 +1,18 @@
+1. What is the purpose of the main function in a C++ program?
+In every C++ program, the main function is the designated entry point. When a C++ program starts executing, the operating system looks for the main function and begins the program from there. It is the first function that runs, and the entire control of the program stems from it. The main function may call other functions, create variables, and execute the program logic defined by the programmer. Without a main function, the compiler will throw an error because it has no instruction on where to begin the execution. The general structure of a main function is:
+
+int main() {
+    // Your code here
+    return 0;
+}
+
+The main function typically returns an int which is used as the exit code for the program. return 0; indicates that the program has run successfully, while other return codes can indicate various error states. There are also variants of the main function that accept command-line arguments:
+
+int main(int argc, char* argv[]) {
+    // Your code here
+    return 0;
+}
+
+Here, argc indicates the number of arguments passed to the program, and argv is an array of character pointers listing all the arguments. This version is useful for programs that require input directly from the command line.
+
+Ultimately, the main function is crucial not just for syntactical correctness, but also for controlling the logic flow and termination behavior of the program

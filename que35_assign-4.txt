@@ -1,0 +1,13 @@
+35. Syntax for Throwing/Catching Exceptions
+Throwing:
+cpp
+if (error) {
+    throw runtime_error("Something went wrong!");
+}
+Catching:
+cpp
+try {
+    riskyFunction();
+} catch (const exception& e) {
+    cerr << "Error: " << e.what();
+}

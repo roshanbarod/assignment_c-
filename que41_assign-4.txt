@@ -1,0 +1,41 @@
+41. Creating Custom Exception Classes in C++
+Custom exceptions inherit from std::exception (or its derivatives like std::runtime_error) to integrate with C++'s exception handling.
+
+Example:
+cpp
+#include <iostream>
+#include <exception>
+using namespace std;
+
+class MyException : public exception {
+    string msg;
+public:
+    MyException(const string& message) : msg(message) {}
+    const char* what() const noexcept override {
+        return msg.c_str();
+    }
+};
+
+void validate(int age) {
+    if (age < 18) {
+        throw MyException("Age must be 18+!");
+    }
+    cout << "Access granted." << endl;
+}
+
+int main() {
+    try {
+        validate(15);
+    } catch (const MyException& e) {
+        cerr << "Custom Error: " << e.what() << endl;
+    }
+    return 0;
+}
+Output:
+
+Custom Error: Age must be 18+!
+Key Points:
+
+Override what() to provide error details.
+
+Use noexcept to indicate the function won’t throw.

@@ -1,0 +1,5 @@
+13. What is an inline function in C++?
+
+An inline function in C++ is a function for which the compiler replaces the function call with the actual code of the function. This is done to reduce the overhead of function calls, particularly for very short functions that are called frequently. By using the inline keyword, a programmer suggests to the compiler that it should insert the complete function code wherever the function is called.
+
+However, it's important to note that the compiler may choose to ignore the inline request. The actual inlining decision is taken by the compiler based on several factors like function complexity, call frequency, and optimization level.

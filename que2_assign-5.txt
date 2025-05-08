@@ -1,0 +1,27 @@
+2. Explain the Significance of the Return Type of the main() Function
+In C++, the return type of the main() function is typically int, which is used to return an exit status to the operating system. This status code is a convention used by the OS to determine whether a program executed successfully.
+
+a. Return 0: Success
+Returning 0 from main() conventionally signals that the program has completed without errors.
+
+cpp
+Copy
+Edit
+int main() {
+    // Code
+    return 0; // indicates success
+}
+b. Non-Zero Return: Failure
+Returning a non-zero value indicates an error. This helps in debugging and scripting when running batch processes.
+
+cpp
+Copy
+Edit
+int main() {
+    // Error condition
+    return 1; // indicates an error occurred
+}
+c. Why int and Not void?
+While some compilers allow main() with a return type of void, this is non-standard and not portable. The C++ standard requires the return type of main() to be int. This ensures compatibility across platforms and compilers.
+
+Returning a value from main() enables external programs, shell scripts, or the operating system to make decisions based on the success or failure of the program

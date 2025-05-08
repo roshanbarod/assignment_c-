@@ -1,0 +1,18 @@
+19. How Parameterized Constructors Work
+A parameterized constructor takes arguments to initialize an object with specific values.
+
+Example:
+cpp
+class Point {
+    int x, y;
+public:
+    Point(int a, int b) {  // Parameterized constructor
+        x = a;
+        y = b;
+    }
+};
+
+int main() {
+    Point p(10, 20);  // Calls parameterized constructor
+    return 0;
+}

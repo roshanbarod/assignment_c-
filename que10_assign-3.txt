@@ -1,0 +1,10 @@
+10. How does data hiding work in C++?
+Data hiding is achieved by:
+
+Making data members private
+
+Providing public member functions to access and modify them
+
+Validating data before allowing modifications
+
+This prevents direct external access and ensures data integrity

@@ -1,0 +1,19 @@
+3. Explain the concept of encapsulation with an example.
+Encapsulation is the bundling of data and methods that operate on that data within a single unit (class), while restricting direct access to some of the object's components.
+
+Example:
+
+cpp
+class BankAccount {
+private:
+    double balance;  // hidden data
+
+public:
+    void deposit(double amount) {  // controlled access
+        if (amount > 0) balance += amount;
+    }
+    
+    double getBalance() {  // controlled access
+        return balance;
+    }
+};

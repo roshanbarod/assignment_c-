@@ -1,0 +1,17 @@
+5. How do you declare a function prototype for a function that returns an integer and takes two integer parameters?
+A function prototype with this signature would look like:
+
+
+int add(int a, int b);
+You can also omit parameter names:
+
+
+int add(int, int);
+Both are valid and tell the compiler that:
+
+A function named add exists.
+
+It takes two int parameters.
+
+It returns an int.
+

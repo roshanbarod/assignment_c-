@@ -1,0 +1,44 @@
+13. What is an Inline Function in C++?
+An inline function is a function for which the compiler attempts to insert the function’s body directly into the places where the function is called, rather than performing a regular function call.
+
+a. Syntax
+cpp
+Copy
+Edit
+inline int square(int x) {
+    return x * x;
+}
+b. Purpose and Use
+Eliminates function call overhead.
+
+Used for short, frequently called functions.
+
+Can improve performance in time-critical applications.
+
+c. How It Works
+Instead of this:
+
+cpp
+Copy
+Edit
+int result = square(4);
+The compiler replaces it with:
+
+cpp
+Copy
+Edit
+int result = 4 * 4;
+This avoids a jump to a separate function location, thus saving time.
+
+d. Advantages
+Faster execution for small functions.
+
+Useful in templates and header files.
+
+e. Limitations
+The compiler may ignore the inline request if the function is too complex.
+
+Inlining increases the size of binary code (code bloat) if overused.
+
+f. Best Practice
+Use inline functions only for small, frequently-used code blocks that are not likely to cause significant code bloat.

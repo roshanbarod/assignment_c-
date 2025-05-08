@@ -1,0 +1,7 @@
+5. Describe the syntax for creating an object of a class.
+cpp
+ClassName objectName;
+Example:
+
+cpp
+Rectangle rect;  // creates a Rectangle object named rect

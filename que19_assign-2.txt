@@ -1,0 +1,5 @@
+19. What is function overloading in C++?
+
+Function overloading in C++ allows multiple functions to have the same name with different parameter lists. The compiler determines which function to invoke based on the number and type of arguments passed.
+
+It helps in increasing the readability of the code by using the same function name for similar operations.

@@ -1,0 +1,15 @@
+29. Abstract Class in C++
+An abstract class is a class that:
+
+Contains at least one pure virtual function (= 0).
+
+Cannot be instantiated (no objects can be created).
+
+Serves as a base class for derived classes to implement its interface.
+
+Example:
+cpp
+class Shape {  // Abstract class
+public:
+    virtual double area() const = 0;  // Pure virtual function
+};

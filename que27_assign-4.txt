@@ -1,0 +1,11 @@
+27. Late Binding (Dynamic Binding)
+What it is: Resolving function calls at runtime (via vtables) rather than compile-time.
+
+Context: Used with virtual functions when called via base pointers/references.
+
+Advantage: Enables polymorphic behavior.
+
+Example:
+cpp
+Base* b = new Derived();
+b->virtualFunction();  // Late binding: calls Derived::virtualFunction()

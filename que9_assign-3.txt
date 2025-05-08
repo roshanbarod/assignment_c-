@@ -1,0 +1,17 @@
+9. Example of a class with both private and public members.
+cpp
+class Student {
+private:
+    int rollNo;          // private data member
+    string name;         // private data member
+
+public:
+    void setDetails(int r, string n) {  // public member function
+        rollNo = r;
+        name = n;
+    }
+    
+    void display() {      // public member function
+        cout << "Roll: " << rollNo << ", Name: " << name;
+    }
+}

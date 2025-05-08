@@ -1,0 +1,30 @@
+3. What Are the Two Valid Signatures of the main() Function in C++?
+The C++ standard allows two valid signatures for the main() function:
+
+a. int main()
+This is the simplest and most common form.
+
+cpp
+Copy
+Edit
+int main() {
+    return 0;
+}
+b. int main(int argc, char* argv[])
+This version allows command-line arguments to be passed into the program.
+
+argc: Argument count (number of command-line arguments).
+
+argv: Argument vector (array of C-style strings representing arguments).
+
+cpp
+Copy
+Edit
+int main(int argc, char* argv[]) {
+    // Example: Print all command-line arguments
+    for(int i = 0; i < argc; ++i) {
+        std::cout << argv[i] << std::endl;
+    }
+    return 0;
+}
+Both signatures are valid and serve different purposes. The first is used when no command-line arguments are needed, and the second provides flexibility for more complex programs.

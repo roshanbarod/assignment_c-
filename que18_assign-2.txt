@@ -1,0 +1,19 @@
+18. Provide an example to illustrate the differences between macros and inline functions:
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+
+inline int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    int x = 10, y = 20;
+
+    cout << "Using macro: " << MAX(x++, y++) << endl;
+    // x and y may be incremented twice!
+
+    x = 10; y = 20;
+    cout << "Using inline function: " << max(x++, y++) << endl;
+    // x and y are incremented once only
+
+    return 0;
+}

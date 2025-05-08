@@ -1,0 +1,43 @@
+38. Handling Multiple Exceptions in C++
+In C++, different types of exceptions can be caught using multiple catch blocks. This allows for specific error handling based on the type of exception thrown.
+
+Example:
+cpp
+#include <iostream>
+#include <stdexcept> // For standard exceptions
+using namespace std;
+
+void checkValue(int value) {
+    if (value < 0) {
+        throw invalid_argument("Negative value not allowed!");
+    } else if (value == 0) {
+        throw runtime_error("Zero value detected!");
+    }
+    cout << "Valid value: " << value << endl;
+}
+
+int main() {
+    try {
+        checkValue(-5);  // Throws invalid_argument
+        // checkValue(0); // Throws runtime_error
+        // checkValue(10); // Valid
+    } 
+    catch (const invalid_argument& e) {
+        cerr << "Invalid Argument Error: " << e.what() << endl;
+    } 
+    catch (const runtime_error& e) {
+        cerr << "Runtime Error: " << e.what() << endl;
+    } 
+    catch (...) { // Catch-all block (optional)
+        cerr << "Unknown error occurred!" << endl;
+    }
+    return 0;
+}
+Output:
+
+Invalid Argument Error: Negative value not allowed!
+Key Points:
+
+Order matters: Catch more specific exceptions before general ones.
+
+catch(...) catches any unhandled exception (use sparingly).
